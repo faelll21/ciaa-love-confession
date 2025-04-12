@@ -42,16 +42,7 @@
       background: linear-gradient(45deg, #ff66b2, #ffffff);
       -webkit-background-clip: text;
       color: transparent;
-      animation: colorChange 3s infinite alternate;
-    }
-
-    @keyframes colorChange {
-      0% {
-        background: linear-gradient(45deg, #ff66b2, #ffffff);
-      }
-      100% {
-        background: linear-gradient(45deg, #ffffff, #ff66b2);
-      }
+      transition: background 2s ease;
     }
 
     .pink-glow {
@@ -83,6 +74,7 @@
     audio {
       display: none;
     }
+
   </style>
 </head>
 <body>
