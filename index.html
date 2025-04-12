@@ -27,7 +27,7 @@
       color: white;
       text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8);
       opacity: 0;
-      transition: opacity 1s ease-in-out;
+      transition: opacity 1s ease-in-out, top 1s ease-in-out;
     }
 
     .main-text {
@@ -39,6 +39,19 @@
     .sub-text {
       font-size: 14px;
       opacity: 0.7;
+      background: linear-gradient(45deg, #ff66b2, #ffffff);
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: colorChange 3s infinite alternate;
+    }
+
+    @keyframes colorChange {
+      0% {
+        background: linear-gradient(45deg, #ff66b2, #ffffff);
+      }
+      100% {
+        background: linear-gradient(45deg, #ffffff, #ff66b2);
+      }
     }
 
     .pink-glow {
@@ -81,7 +94,7 @@
   <div class="sub-text">I have a crush on you.</div>
 </div>
 
-<button class="btn" onclick="spawnExtraLove(); showRomanticText()">Click Me 💕</button>
+<button class="btn" onclick="spawnExtraLove(); showRomanticText(); moveButtonDown()">Click Me 💕</button>
 
 <audio id="bgm" autoplay loop>
   <source src="https://cdn.pixabay.com/download/audio/2022/11/03/audio_6c4a97c0b5.mp3?filename=romantic-love-ambient-piano-12695.mp3" type="audio/mpeg" />
@@ -187,6 +200,13 @@
   function showRomanticText() {
     const text = document.getElementById("loveText");
     text.style.opacity = 1;
+  }
+
+  // ✨ Move button down after click
+  function moveButtonDown() {
+    const btn = document.querySelector(".btn");
+    btn.style.transition = "top 1s ease-in-out";
+    btn.style.top = "70%";  // Menurunkan tombol ke bawah
   }
 
   // Mobile autoplay fix
