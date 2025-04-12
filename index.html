@@ -24,10 +24,10 @@
       transform: translate(-50%, -50%);
       text-align: center;
       font-family: Arial, sans-serif;
-      color: white;
+      color: #ff66b2; /* Mulai dengan warna pink */
       text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8);
       opacity: 0;
-      transition: opacity 1s ease-in-out;
+      transition: opacity 1s ease-in-out, color 2s ease-in-out;  /* Menambahkan transisi pada warna */
     }
 
     .main-text {
@@ -186,7 +186,8 @@
   // ✨ Show Romantic Text with animation
   function showRomanticText() {
     const text = document.getElementById("loveText");
-    text.style.opacity = 1;
+    text.style.opacity = 1;  // Menampilkan teks secara perlahan
+    text.style.color = "white";  // Mengubah warna teks menjadi putih
   }
 
   // Mobile autoplay fix
